@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    color: #222;
+}
+.navbar-brand img {
+    width: 150px;
+}
+.navbar-nav li {
+    padding-right: 20px;
+}
+.nav-link {
+    font-size: 1.1em !important;
+}
+.carousel-inner {
+    max-height: 100vh;
+}
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-80%);
+    text-shadow: 1px 1px 10px #000;
+}
+.jumbotron {
+    padding: 1em;
+    border-radius: 0;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.contacts-container {
+    height: 55vh;
+}
+
+.contacts a {
+    text-decoration: none; color: #000;
+}
+
+.contacts a:hover {
+    text-shadow: 1px 1px 10px rgb(27, 24, 24);
+}
+
+.padding {
+    padding: 3em 0;
+}
+
+.alert {
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 2em; 
+}
+
+.alert hr {
+    border-top: 2px solid #f0f0f0;
+    width: 95%;
+    margin-top: 0.3em;
+    margin-bottom: 1em;
+}
+
+.carousel-caption a { 
+    text-decoration: none;
+}
+.carousel-caption a:visited { 
+    color: #000;
+}
+
+.fa-instagram, .inst, .instб:visited, .inst:hover{
+    color: red;
+}
+
+.fa-facebook-f, .fb, .fb:visited {
+    color: blue;
+}
+.fa-linkedin-in, .linked, .linked:visited{
+    color: aqua;
+}
+
+.fa-instagram, .fa-facebook-f, .fa-linkedin-in {
+    font-size: 3em;
+    margin: 0.3em;
+} 
+
+.carousel-inner img {
+    width: 100%;
+}
+
+.grow:hover{
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+
+/*  -------------------SLIDER------------------------ */
+
+.slider{
+    max-width: fit-content;
+    position: relative;
+    margin: auto;
+    height: 80vh;
+    margin-bottom: 15px;
+}
+/* Картинка мастабируется по отношению к родительскому элементу */
+.slider .item img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    border: none !important;
+    box-shadow: none !important;
+}
+/* Кнопки вперед и назад */
+.slider .prev, .slider .next {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+.slider .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+/* При наведении на кнопки добавляем фон кнопок */
+.slider .prev:hover,
+.slider .next:hover {
+    background-color: rgba(167, 164, 164, 0.8);
+}
+
+/* Кружочки */
+.slider-dots {
+    text-align: center;
+}
+.slider-dots_item{
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    transition: 0.6s ease;
+}
+.active,
+.slider-dots_item:hover {
+    background-color: #aaa;
+}
+/* Анимация слайдов */
+.slider .item {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+    height: 100%;
+}
+
+
+
+
+@media (max-width: 1100px) {
+    .myName {font-size: 3.5rem; }
+    .slider {height: 60vh;}
+    .contacts-container {height: 40vh;}
+}
+
+
+@media screen and  (max-width: 700px) {
+    .myName {font-size: 2.5rem;}
+    .lead {font-size: 1rem;}
+}
+
+@media screen and  (max-width: 600px) {
+    .contacts p {font-size: 1.3rem;}
+    .myJob {font-size: 1rem;}
+    .slider {max-width: 100%; }
+    .carousel-indicators {bottom: -5px;}
+}
+
+
+@media screen and  (max-width: 450px) {
+    .contacts p {font-size: 0.8rem;}
+    .myName {font-size: 2rem;}
+    .slider {height: 40vh;}
+    .carousel-indicators {bottom: -10px;}
+}
+
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+
+
