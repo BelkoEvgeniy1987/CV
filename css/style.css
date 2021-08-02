@@ -93,6 +93,7 @@ body, html {
     -ms-transform: scale(1.5);
     transform: scale(1.5);
   }
+  .padding-socials { padding: 6em 0}
 
 /*  -------------------SLIDER------------------------ */
 
@@ -100,14 +101,14 @@ body, html {
     max-width: fit-content;
     position: relative;
     margin: auto;
-    height: 80vh;
+    max-height: 80vh;
     margin-bottom: 15px;
 }
 /* Картинка мастабируется по отношению к родительскому элементу */
 .slider .item img {
     object-fit: contain;
     width: 100%;
-    height: 100%;
+    max-height: 60vh;
     border: none !important;
     box-shadow: none !important;
 }
@@ -122,7 +123,7 @@ body, html {
     padding: 16px;
     color: white;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 30px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
 }
@@ -142,8 +143,8 @@ body, html {
 }
 .slider-dots_item{
     cursor: pointer;
-    height: 12px;
-    width: 12px;
+    height: 20px;
+    width: 20px;
     margin: 0 2px;
     background-color: #ddd;
     border-radius: 50%;
@@ -165,17 +166,21 @@ body, html {
 
 
 
-
-@media (max-width: 1100px) {
-    .myName {font-size: 3.5rem; }
-    .slider {height: 60vh;}
-    .contacts-container {height: 40vh;}
+@media screen and (max-width: 1100px) {
+    .myName {font-size: 4rem;}
+    .myJob {font-size: 3rem;}
+    .contacts-container {height: 20vh;}
+    .socials {margin-bottom: 88px;}
+    .prev, .next {font-size: 50px;}
+    .slider-dots_item {height: 35px;width: 35px;}
 }
 
 
 @media screen and  (max-width: 700px) {
     .myName {font-size: 2.5rem;}
+    .myJob {font-size: 2rem;}
     .lead {font-size: 1rem;}
+    .contacts-container {height: 30vh;}
 }
 
 @media screen and  (max-width: 600px) {
@@ -189,7 +194,7 @@ body, html {
 @media screen and  (max-width: 450px) {
     .contacts p {font-size: 0.8rem;}
     .myName {font-size: 2rem;}
-    .slider {height: 40vh;}
+    .slider {height: 30vh;}
     .carousel-indicators {bottom: -10px;}
 }
 
