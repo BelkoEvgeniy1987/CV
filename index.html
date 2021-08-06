@@ -1,177 +1,118 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>My CV</title>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    <title>Document</title>
 </head>
 
 <body>
+    <!---------------------------- header----------------------------->
+    <header class="header" id="header">
+        <div class="header__inner">
+            <div class="navbar">
+                <div class="navbar__inner">
+                    <div class="navbar__logo">
+                        <img src="img/logo-1.png" alt="">
+                    </div>
+                    <ul class="navbar__ul navigation">
+                        <li class="navbar__li">
+                            <a href="#header" class="nav-link">header</a>
+                        </li>
+                        <li class="navbar__li">
+                            <a href="#photo" class="nav-link">Photo</a>
+                        </li>
+                        <li class="navbar__li">
+                            <a href="#socials" class="nav-link">Contacts</a>
 
-
-
-    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-        <div class="container-fluid">
-            <a href="#" class="navbar-brand"><img src="img/logo1.png" alt=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul id="menu" class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="#slides" class="nav-link">Main</a>
-                    </li>
-                    <li class="nav-item"><a href="#aboutMe" class="nav-link">About me</a>
-                    </li>
-                    <li class="nav-item"><a href="#socials" class="nav-link">Socials</a>
-                    </li>
-                    <li class="nav-item"><a href="#photos" class="nav-link">Photos</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="carousel slide" data-ride="carousel" id="slides">
-        <ul class="carousel-indicators">
-            <li data-target="#slides" data-slide-to="0" class="active"></li>
-            <li data-target="#slides" data-slide-to="1"></li>
-            <li data-target="#slides" data-slide-to="2"></li>
-        </ul>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="img/1.jpeg" alt="">
-                <div class="carousel-caption">
-                    <h1 class="myName display-2 ">Belko Evgeniy</h1>
-                    <h3 class="myJob">Front-end developer</h3>
-                    <a href="cv/CV Belko.pdf" download="CV Belko"><button type="button"
-                            class="btn btn-outline-light btn-md">CV</button></a>
-                    <button type="button" class="btn btn-warning btn-md"><a href="#top">About me</a> </button>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img src="img/2.jpg" alt="">
-                <div class="carousel-caption">
-                    <h1 class="myName display-2">Belko Evgeniy</h1>
-                    <h3 class="myJob">Front-end developer</h3>
-                    <a href="cv/CV Belko.pdf" download="CV Belko"><button type="button"
-                            class="btn btn-outline-light btn-md">CV</button></a>
-                    <button type="button" class="btn btn-warning btn-md"><a href="#top">About me</a> </button>
-                </div>
+            <div class="header__text">
+                <h1 class="header__text-item">Belko Evgeniy</h1>
+                <h1 class="header__text-item">Front-end developer</h1>
+                <a href="cv/CV Belko.pdf" download="CV Belko">
+                    <button type="button" class="header__button">Download CV</button>
+                </a>
             </div>
-            <div class="carousel-item">
-                <img src="img/4.jpg" alt="">
-                <div class="carousel-caption">
-                    <h1 class="myName display-2">Belko Evgeniy</h1>
-                    <h3 class="myJob">Front-end developer</h3>
-                    <a href="cv/CV Belko.pdf" download="CV Belko"><button type="button"
-                            class="btn btn-outline-light btn-md">CV</button></a>
-                    <button type="button" class="btn btn-warning btn-md"><a href="#top">About me</a> </button>
-                </div>
-            </div>
+
         </div>
-    </div>
+    </header>
+    <!---------------------------- /header----------------------------->
 
-    <div id="aboutMe" class="container-fluid padding">
-        <div class="row jumbotron">
-            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-                <p class="lead"> Hi everyone! This page was created by me for demonstration
-                    some Front-end
-                    skills. I'm
-                    looking for my first IT-job and will be happy for invitation to Front-end practice as a trainee JS
-                    developer
-                </p>
-            </div>
-            <div class="col-12 col-md-3 col-xl-2">
-                <a class="button-a" href="###"><button class="btn btn-success btn-lg" type="button">Read
-                        more</button></a>
-            </div>
+    <!----------------------------- main------------------------------->
+
+    <main class="main" id="photo">
+        <div id="main__inner" class="main__inner">
+            <img src="/img/1.JPG" alt="" class="main__inner-item">
+            <img src="/img/2.JPG" alt="" class="main__inner-item">
+            <img src="/img/3.JPG" alt="" class="main__inner-item">
+            <img src="/img/4.JPG" alt="" class="main__inner-item">
+            <img src="/img/5.JPG" alt="" class="main__inner-item">
+            <img src="/img/6.JPG" alt="" class="main__inner-item">
+            <img src="/img/7.JPG" alt="" class="main__inner-item">
         </div>
-    </div>
+    </main>
 
-    <div id="socials" class="container-fluid contacts-container">
-        <div class="row text-center alert">
-            <div class="col-12">
-                <h4 class="display-5 contacts">
-                    <hr>
-                    <a href="skype:[belkazhenya]">
-                        <p><i class="fab fa-skype grow"></i></p>
-                        <p>belkazhenya</p>
-                    </a>
-                    <hr>
-                    <a href="mailto:belkoevgeniy777@gmail.com]">
-                        <p><i class="fas fa-envelope-open grow"></i></p>
-                        <p>belkoevgeniy777@gmail.com</p>
-                    </a>
-                    <hr>
-                    <a href="tel:+380956811993">
-                        <p><i class="fas fa-phone grow"></i></p>
-                        <p>380956811993</p>
-                    </a>
-                </h4>
+    <!------------------------- /main------------------------------->
+
+
+    <footer>
+        <!------------------------- /social links----------------------->
+
+        <div class="socials" id="socials">
+
+            <div class="socials__item">
+                <i class="fab fa-instagram"></i>
+                <a class="inst" href="https://instagram.com/belkoevgeniy/">Instagram</a>
             </div>
-            <div class="col-12">
-                <p class="lead"></p>
+
+            <div class="socials__item">
+                <i class="fab fa-facebook-f"></i>
+                <a class="fb" href="https://facebook.com/evgeniy.belko/">facebook</a>
             </div>
-        </div>
-    </div>
 
-    <div class="container-fluid padding">
-        <div class="row text-center padding padding-socials">
-            <div class="col-md-12  col-lg-4">
-                <i class="fab fa-instagram grow"></i>
-                <h3 class="grow"><a class="inst" href="https://instagram.com/belkoevgeniy/">Instagram</a></h3>
-
+            <div class="socials__item">
+                <i class="fab fa-linkedin-in"></i>
+                <a class="linked" href="https://facebook.com/evgeniy.belko/">Linkedin</a>
             </div>
-            <div class="col-md-12  col-lg-4">
-                <i class="fab fa-facebook-f grow"></i>
-                <h3 class="grow"><a class="fb" href="https://facebook.com/evgeniy.belko/">facebook</a></h3>
 
-            </div>
-            <div class="col-md-12  col-lg-4">
-                <i class="fab fa-linkedin-in grow"></i>
-                <h3 class="grow"><a class="linked" href="https://facebook.com/evgeniy.belko/">Linkedin</a></h3>
-
-            </div>
-        </div>
-    </div>
-
-    <div id="photos" class="slider">
-
-        <div class="item ">
-            <img src="img/photo-1.JPG" alt="Первый слайд">
         </div>
 
-        <div class="item">
-            <img src="img/photo-2.JPG" alt="Второй слайд">
+        <!------------------------- /social links----------------------->
+
+        <!------------------------- contacts links--------------------->
+
+        <div class="contacts">
+
+            <a class="contacts__link" href="skype:[belkazhenya]">
+                <i class="fab fa-skype grow"></i>
+                <div>belkazhenya</div>
+            </a>
+
+            <a class="contacts__link" href="mailto:belkoevgeniy777@gmail.com]">
+                <i class="fas fa-envelope-open grow"></i>
+                <div>belkoevgeniy777@gmail.com</div>
+            </a>
+
+
+            <a class="contacts__link" href="tel:+380956811993">
+                <i class="fas fa-phone grow"></i>
+                <div>380956811993</div>
+            </a>
+
         </div>
 
-        <div class="item">
-            <img src="img/photo-3.JPG" alt="Третий слайд">
-        </div>
-
-        <div class="item">
-            <img src="img/photo-4.JPG" alt="Третий слайд">
-        </div>
-
-        <div class="item">
-            <img src="img/photo-5.JPG" alt="Третий слайд">
-        </div>
-
-    </div>
-
-    <div class="slider-dots">
-    </div>
-
-
-
-    <script src="js/index.js"></script>
+        <!------------------------- /contacts links------------------->
+    </footer>
+    <script src="/js/index.js"></script>
 </body>
 
 </html>
