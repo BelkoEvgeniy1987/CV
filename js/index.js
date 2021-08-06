@@ -1,44 +1,43 @@
-/* ----Создаем "стрелки" для переключения предыдущее/следующее фото---- */
-
-let photos = document.querySelector('#photos');
-
-let prev = document.createElement("a");
-prev.classList.add('prev');
-prev.innerHTML = "&#10094";
-photos.appendChild(prev);
-
-let next = document.createElement("a");
-next.classList.add('next');
-next.innerHTML = "&#10095";
-photos.appendChild(next);
 
 
-prev.addEventListener("click", minusSlide);
-next.addEventListener("click", plusSlide);
+/* ----------------------Создаем слайдер-----------------*/
 
 
-/*----------------------------------------------------Навигация по слайдеру--------------------------------------------------------------*/
+// Создаем панель навигации и вставляем под фотографиями
 
-/* Создаем элементы навигации слайдера ( количество кружочков = количеству фото)*/
+// создаем контейнер для элементов навигации */
+let divForDots = document.createElement("div");
 
-let sliderDots = document.querySelector('.slider-dots');
-let dotsAmount = photos.querySelectorAll('div').length;
+//вставляем контейнер после фото*/
+let sliderDots = document.querySelector('#main__inner');
+sliderDots.appendChild(divForDots);
+
+//добавляем ему класс 
+divForDots.classList.add('dots__container');
+
+
+// количество элементов навигации равно количеству фото
+// создаем элементы навигации и вставляем в контейнер
+let dotsAmount = sliderDots.querySelectorAll('img').length;
 
 for (let i = 1; i <= dotsAmount; i++) {
     let dot = document.createElement("span");
-    dot.classList.add('slider-dots_item');
-    sliderDots.appendChild(dot);
+    dot.classList.add('dots');
+    divForDots.appendChild(dot);
 }
+/*-----------------------------------------------------*/
 
-/* -----------Выбираем фотографию по клику по панели навигации под ней (по клику на кружочек)----------- */
-
-let dot = document.querySelectorAll('.slider-dots_item');
+let dot = document.querySelectorAll('.dots');
 let dotsArray = Array.from(dot);
-let galleryItems = document.querySelectorAll('.item');
-let photoArray = Array.from(galleryItems);
 
+let photo = document.querySelectorAll('.main__inner img');
+let photoArray = Array.from(photo);
+
+
+//отслеживаем клик по элементам навигации
+//при клике на элемент - отображаем фото с соответствующим индексом
 let myIndex = (event) => {
-    let result = dotsArray.indexOf(event.target); //получаем индекс кликнутого элемента (кружочек)
+    let result = dotsArray.indexOf(event.target);
 
     if (result >= 0) {
         showSlide(slideIndex = result)
@@ -46,36 +45,52 @@ let myIndex = (event) => {
 }
 sliderDots.addEventListener("click", myIndex);
 
-/*---------- Индекс слайда по умолчанию -------------*/
 
+//отслеживаем клик по фото
+//при клике на фото - отображаем следующее фото
+let nextPhoto = (event) => {
+    if ((event.target).className === "main__inner-item") {
+        plusSlide()
+    }
+}
+sliderDots.addEventListener("click", nextPhoto);
+
+
+
+// индекс фото по умолчанию
 let slideIndex = 0;
+
+//показать фото
 showSlide(slideIndex);
 
-
-/* ------------------------------------Переключение между слайдами с помощью стрелок--------------------- */
+//показать следующее фото
 function plusSlide() {
     showSlide(slideIndex++);
 }
 
-function minusSlide() {
-    showSlide(slideIndex++);
-}
+
 
 function showSlide(n) {
-    slideIndex > (photoArray.length - 1) ? slideIndex = 0 : 1; // переключение с последнего фотографии на первую (при нажатии стрелок)
-    slideIndex < 0 ? slideIndex = (photoArray.length - 1) : 1; // переключение с первой фотографии на последнюю (при нажатии стрелок)
+    // переключение с последней фотографии на первую 
+    slideIndex > (photoArray.length - 1) ? slideIndex = 0 : 1;
 
-    photoArray.forEach(item => item.style.display = "none"); //делаем фотографии не видимыми
-    photoArray[slideIndex].style.display = "block"; //делаем фотографию по индексу выбранного кружочка видимымой
+    //делаем фотографии не видимыми
+    photoArray.forEach(item => item.style.display = "none");
 
-    dotsArray.forEach(item => item.classList.remove('active')); //удаляем все классы
-    dotsArray[slideIndex].className += " active"; //добавляем класс 'active' нажатому кружочку
+    //показываем фото по кликнутому элементу навигации
+    photoArray[slideIndex].style.display = "block";
+
+    //удаляем все классы
+    dotsArray.forEach(item => item.classList.remove('dots__active'));
+
+    //добавляем класс 'active' нажатому кружочку
+    dotsArray[slideIndex].className += " dots__active";
 }
 
 
-/* -----------------------------------------Плавная прокрутка --------------------------------------*/
+/* -----------------Плавная прокрутка----------------- */
 
-let navLinks = document.querySelectorAll('a.nav-link');
+let navLinks = document.querySelectorAll('.nav-link');
 
 for (let item of navLinks) {
     item.addEventListener('click', function (e) {
@@ -89,7 +104,4 @@ for (let item of navLinks) {
         })
     })
 }
-
-
-/* ------------------------------------------------------------------------------------------------- */
 
