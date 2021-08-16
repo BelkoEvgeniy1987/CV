@@ -1,4 +1,73 @@
 
+/*---------------------- погода -------------------------*/
+
+let weatherWrapper = document.querySelector(".kharkiv-weather");
+
+// создаем DIV для названия города
+let city = document.createElement('div');
+city.classList.add('city');
+weatherWrapper.appendChild(city);
+
+// создаем DIV для температуры воздуха
+let temperature = document.createElement('div');
+temperature.classList.add('temperature');
+weatherWrapper.appendChild(temperature);
+
+// создаем DIV для погодных условий
+let weather = document.createElement('div');
+weather.classList.add('weather');
+weatherWrapper.appendChild(weather);
+
+// создаем DIV для картинки, соответствующей погоде
+let weatherImg = document.createElement('div');
+weatherImg.classList.add('weatherImg');
+weatherWrapper.appendChild(weatherImg);
+
+
+fetch(`http://api.openweathermap.org/data/2.5/weather?q=Kharkiv&appid=16270f06eb77a549e4824d01f4278238`)
+    .then((resp) => resp.json())
+    .then((data) => {
+        console.log(data)
+
+        //город
+        document.querySelector('.city').textContent = data.name;
+
+        //температура (округляем в большую сторону), переводим из градусов Келвина в градусы Цельсия
+        let temp = Math.ceil((data.main.temp) - 273);
+        document.querySelector('.temperature').innerHTML = temp + '&deg';
+        //в конце - добавляем символ "градус"
+
+        //состояние погоды
+        let weather = data.weather[0]['description'];
+        document.querySelector('.weather').textContent = weather;
+
+        //вызываем функцию для определения соответсвующей img
+        imgForWeather(temp)
+    })
+
+
+
+//функция присваивания соответсвующей погоды img  
+function imgForWeather(temp) {
+    let img;
+
+    if ((weather.textContent === "drizzle") || (weather.textContent.includes("rain")) || (weather.textContent === "thunderstorm")) {
+        img = '<img src="img/Дождь.png" alt="дождь">';
+    } else if (weather.textContent === "snow") {
+        img = '<img src="img/Снег.png" alt="снег">';
+    } else if ((weather.textContent === `clear sky`) && (temp >= "30")) {
+        img = '<img src="img/Жара.png" alt="жара">';
+    } else if ((weather.textContent === "clear sky") && (temp <= "0")) {
+        img = '<img src="img/Минус.png" alt="мороз">';
+    } else if (weather.textContent === `clear sky`) {
+        img = '<img src="img/Солнечно.png" alt="солнечно">';
+    } else if (weather.textContent.includes('clouds')) {
+        img = '<img src="img/Облачно.png" alt="облачно">';
+    }
+    //соответствующая погоде img
+    document.querySelector('.weatherImg').innerHTML = img;
+}
+
 
 /* ----------------------Создаем слайдер-----------------*/
 
