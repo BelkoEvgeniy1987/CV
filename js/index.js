@@ -24,7 +24,7 @@ weatherImg.classList.add('weatherImg');
 weatherWrapper.appendChild(weatherImg);
 
 
-fetch(`http://api.openweathermap.org/data/2.5/weather?q=Kharkiv&appid=16270f06eb77a549e4824d01f4278238`)
+fetch(`https://api.openweathermap.org/data/2.5/weather?q=Kharkiv&appid=16270f06eb77a549e4824d01f4278238`)
     .then((resp) => resp.json())
     .then((data) => {
         console.log(data)
